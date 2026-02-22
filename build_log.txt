@@ -1,0 +1,26 @@
+
+> trading-dashboard@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 44s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/(dashboard)/settings/page.tsx:447:37
+Type error: Type '(el: HTMLInputElement | null) => HTMLInputElement | null' is not assignable to type 'Ref<HTMLInputElement> | undefined'.
+  Type '(el: HTMLInputElement | null) => HTMLInputElement | null' is not assignable to type '(instance: HTMLInputElement | null) => void | (() => VoidOrUndefinedOnly)'.
+    Type 'HTMLInputElement | null' is not assignable to type 'void | (() => VoidOrUndefinedOnly)'.
+      Type 'null' is not assignable to type 'void | (() => VoidOrUndefinedOnly)'.
+
+[0m [90m 445 |[39m                                 [33m<[39m[33minput[39m
+ [90m 446 |[39m                                     key[33m=[39m{idx}
+[31m[1m>[22m[39m[90m 447 |[39m                                     ref[33m=[39m{(el) [33m=>[39m (resetPinRefs[33m.[39mcurrent[idx] [33m=[39m el)}
+ [90m     |[39m                                     [31m[1m^[22m[39m
+ [90m 448 |[39m                                     type[33m=[39m[32m"text"[39m
+ [90m 449 |[39m                                     inputMode[33m=[39m[32m"numeric"[39m
+ [90m 450 |[39m                                     autoFocus[33m=[39m{idx [33m===[39m [35m0[39m}[0m
+Next.js build worker exited with code: 1 and signal: null
