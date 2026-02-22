@@ -444,7 +444,7 @@ export default function SettingsPage() {
                             {resetPin.map((digit, idx) => (
                                 <input
                                     key={idx}
-                                    ref={(el) => (resetPinRefs.current[idx] = el)}
+                                    ref={(el) => void (resetPinRefs.current[idx] = el)}
                                     type="text"
                                     inputMode="numeric"
                                     autoFocus={idx === 0}
