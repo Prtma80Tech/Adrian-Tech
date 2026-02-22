@@ -159,10 +159,10 @@ export function TradingJournal() {
     const stats = useMemo(() => {
         if (trades.length === 0) {
             return [
-                { label: 'Trading Capital', value: formatCurrency(tradingCapital, 'IDR'), icon: Wallet, color: 'text-gold' },
-                { label: 'Win Rate', value: '0%', icon: CheckCircle2, color: 'text-profit' },
-                { label: 'Total Trades', value: '0', icon: BarChart3, color: 'text-primary' },
-                { label: 'Avg Result', value: formatCurrency(0, 'IDR'), icon: TrendingUp, color: 'text-profit' },
+                { label: 'Trading Capital', value: formatCurrency(tradingCapital, 'IDR'), icon: Wallet, color: 'text-gold', subValue: undefined },
+                { label: 'Win Rate', value: '0%', icon: CheckCircle2, color: 'text-profit', subValue: undefined },
+                { label: 'Total Trades', value: '0', icon: BarChart3, color: 'text-primary', subValue: undefined },
+                { label: 'Avg Result', value: formatCurrency(0, 'IDR'), icon: TrendingUp, color: 'text-profit', subValue: undefined },
             ];
         }
 
@@ -176,10 +176,10 @@ export function TradingJournal() {
         const avgProfit = closedTrades.length > 0 ? totalProfit / closedTrades.length : 0;
 
         return [
-            { label: 'Total P/L', value: formatCurrency(totalProfit, 'IDR'), icon: Activity, color: totalProfit >= 0 ? 'text-profit' : 'text-loss' },
-            { label: 'Win Rate', value: `${winRate}%`, icon: CheckCircle2, color: 'text-profit' },
-            { label: 'Total Trades', value: trades.length.toString(), icon: BarChart3, color: 'text-primary' },
-            { label: 'Avg Result', value: formatCurrency(avgProfit, 'IDR'), icon: TrendingUp, color: 'text-profit' },
+            { label: 'Total P/L', value: formatCurrency(totalProfit, 'IDR'), icon: Activity, color: totalProfit >= 0 ? 'text-profit' : 'text-loss', subValue: undefined },
+            { label: 'Win Rate', value: `${winRate}%`, icon: CheckCircle2, color: 'text-profit', subValue: undefined },
+            { label: 'Total Trades', value: trades.length.toString(), icon: BarChart3, color: 'text-primary', subValue: undefined },
+            { label: 'Avg Result', value: formatCurrency(avgProfit, 'IDR'), icon: TrendingUp, color: 'text-profit', subValue: undefined },
         ];
     }, [trades, tradingCapital]);
 
